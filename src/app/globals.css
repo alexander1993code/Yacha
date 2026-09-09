@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #103B5C;
+  --color-accent: #D72638;
+  --color-steel: #5E6A71;
+  --color-background: #FFFFFF;
+  --color-background-secondary: #F4F6F8;
+  --color-warning: #FF8A00;
+
+  --font-montserrat: var(--font-montserrat-yacha);
+}
+
+body {
+  font-family: var(--font-montserrat-yacha);
+}
