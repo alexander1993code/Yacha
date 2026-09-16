@@ -1,156 +1,272 @@
 import Image from "next/image";
+import Link from "next/link";
+import ServiceHero from "@/components/ServiceHero";
+import ServiceProcess from "@/components/ServiceProcess";
+import AlternatingSection from "@/components/AlternatingSection";
+import NormativaSection from "@/components/NormativaSection";
+import ServiceCTA from "@/components/ServiceCTA";
+import FeatureGrid from "@/components/FeatureGrid";
 import {
   Gauge,
-  Home,
   Sliders,
   Activity,
   Zap,
   Flame,
   ShieldAlert,
+  Cpu,
+  Boxes,
 } from "lucide-react";
 
-const bombFeatures = [
+export const metadata = {
+  title: "Bombas Contra Incendio en Perú | YACHA",
+  description:
+    "Soluciones de ingeniería en sistemas de bombeo contra incendio en Lima y regiones del Perú: evaluación, diseño, suministro, instalación, pruebas y mantenimiento.",
+};
+
+const pressureFlowSteps = [
+  { label: "Abastecimiento", description: "Disponibilidad de agua para el sistema.", number: "01" },
+  { label: "Impulsión", description: "Energía necesaria para movilizar el agua.", number: "02" },
+  { label: "Caudal y Presión", description: "Condición hidráulica requerida para su operación.", number: "03" },
+  { label: "Protección", description: "Respuesta efectiva ante cualquier emergencia.", number: "04" },
+];
+
+const bombComponents = [
   {
     icon: Gauge,
-    title: "Bomba Contra Incendio",
-    description: "Equipos diseñados para suministrar el caudal y presión requeridos en situaciones de emergencia.",
-  },
-  {
-    icon: Home,
-    title: "Cuarto de Bombas",
-    description: "Diseñamos y construimos cuartos de bombas seguros, ventilados y de fácil mantenimiento.",
-  },
-  {
-    icon: Sliders,
-    title: "Sistema de Bombeo",
-    description: "Soluciones completas e integradas para un rendimiento óptimo y constante del sistema.",
+    title: "Bomba principal",
+    description: "Equipo encargado de proporcionar el caudal y la presión requeridos por el sistema.",
   },
   {
     icon: Activity,
-    title: "Bomba Jockey",
-    description: "Mantiene la presión del sistema y evita el arranque innecesario de la bomba principal.",
+    title: "Bomba jockey",
+    description: "Ayuda a mantener la presión del sistema ante pequeñas variaciones, evitando arranques innecesarios.",
+  },
+  {
+    icon: Cpu,
+    title: "Controlador",
+    description: "Gestiona el arranque, supervisión y funciones de control asociadas a la bomba.",
   },
   {
     icon: Zap,
-    title: "Bomba Eléctrica",
-    description: "Equipos de alta eficiencia y confiabilidad para operación continua y automática.",
+    title: "Fuente de energía",
+    description: "Suministra la energía necesaria para la operación del equipo de bombeo según su configuración.",
   },
   {
-    icon: Flame,
-    title: "Bomba Diésel",
-    description: "Respaldo confiable ante fallas de energía eléctrica, asegurando la continuidad del sistema.",
+    icon: Sliders,
+    title: "Elementos de conexión y control",
+    description: "Permiten la conexión hidráulica, supervisión y operación del conjunto de bombeo.",
   },
   {
-    icon: ShieldAlert,
-    title: "NFPA 20",
-    description: "Nuestros sistemas cumplen con la norma NFPA 20: Standard for the Installation of Stationary Pumps for Fire Protection.",
+    icon: Boxes,
+    title: "Elementos auxiliares",
+    description: "Complementan la instalación y operación del sistema de acuerdo con los requerimientos del proyecto.",
   },
+];
+
+const evaluationItems = [
+  { title: "Requerimientos del sistema", description: "Caudales y presiones nominales demandados por la instalación." },
+  { title: "Fuente y abastecimiento", description: "Condiciones de la cisterna o fuente de agua disponible." },
+  { title: "Infraestructura existente", description: "Verificación de tuberías y conexiones preexistentes." },
+  { title: "Espacio y cuarto de bombas", description: "Área disponible, accesibilidad y ventilación requerida." },
+  { title: "Disponibilidad de energía", description: "Suministro eléctrico, respaldo de emergencia y potencia." },
+  { title: "Criterios técnicos y normativos", description: "Cumplimiento del RNE A.130 y estándares NFPA 20." },
+];
+
+const engineeringItems = [
+  { title: "Condiciones de diseño", description: "Requerimientos hidráulicos que debe atender el sistema de bombeo." },
+  { title: "Caudal y presión", description: "Cálculos para garantizar la curva de operación necesaria." },
+  { title: "Configuración del sistema", description: "Solución de bombeo adaptada a las necesidades del proyecto." },
+  { title: "Selección de equipos", description: "Equipos definidos de acuerdo con los rigurosos criterios de ingeniería." },
+  { title: "Criterios de instalación", description: "Detalles de montaje para asegurar una correcta ejecución en obra." },
+  { title: "Planos y especificaciones", description: "Documentación técnica detallada para orientar la ejecución." },
+];
+
+const installationItems = [
+  { title: "Suministro de equipos", description: "Equipos y componentes definidos y aprobados para el proyecto." },
+  { title: "Montaje electromecánico", description: "Instalación y disposición precisa de los equipos de bombeo." },
+  { title: "Conexiones hidráulicas", description: "Integración hidráulica con colectores, válvulas y la red." },
+  { title: "Conexiones eléctricas y de control", description: "Alimentación, sensores y cableado hacia los tableros de control." },
+  { title: "Configuración de parámetros", description: "Calibración de presostatos y funciones operativas del sistema." },
+  { title: "Control de ejecución", description: "Verificación permanente de la implementación según los planos." },
+];
+
+const operationSteps = [
+  { label: "Condiciones", description: "Monitoreo permanente del estado hidráulico de la red.", number: "01" },
+  { label: "Control", description: "Supervisión de presiones y gestión automática de arranque.", number: "02" },
+  { label: "Accionamiento", description: "Operación de los equipos de acuerdo con la secuencia definida.", number: "03" },
+  { label: "Bombeo continuo", description: "Suministro del caudal y presión requeridos por el sistema.", number: "04" },
+];
+
+const testingItems = [
+  { title: "Inspección de equipos", description: "Revisión física y dimensional de los equipos y componentes implementados." },
+  { title: "Arranque y operación", description: "Verificación de la respuesta automática y manual según la configuración." },
+  { title: "Verificación de caudal y presión", description: "Comprobación de las condiciones hidráulicas en puntos de prueba." },
+  { title: "Control y señalización", description: "Comprobación de alarmas, contactores y señales enviadas a la central." },
+  { title: "Funcionamiento del conjunto", description: "Verificación integral de la respuesta de todo el sistema de bombeo." },
+];
+
+const normativaBombas = [
+  {
+    code: "RNE / A.130",
+    name: "Reglamento Nacional de Edificaciones",
+    description: "Requisitos de seguridad y protección contra incendios aplicables a las edificaciones en Perú.",
+  },
+  {
+    code: "CNE",
+    name: "Código Nacional de Electricidad",
+    description: "Requisitos aplicables a las instalaciones eléctricas asociadas a los equipos de bombeo contra incendio.",
+  },
+  {
+    code: "NTP",
+    name: "Normas Técnicas Peruanas",
+    description: "Normas técnicas aplicables según los equipos, componentes y alcance de la instalación.",
+  },
+  {
+    code: "NFPA 20",
+    name: "Standard for Stationary Pumps for Fire Protection",
+    description: "Estándar especializado para la instalación y selección de bombas estacionarias contra incendios.",
+  },
+];
+
+const maintenanceItems = [
+  { title: "Inspección periódica", description: "Revisión de las condiciones generales de las bombas y accesorios." },
+  { title: "Pruebas de funcionamiento", description: "Verificación periódica del arranque y respuesta del sistema." },
+  { title: "Mantenimiento especializado", description: "Actividades orientadas a conservar la confiabilidad operativa." },
+  { title: "Documentación y reportes", description: "Registro exhaustivo de las actividades y mediciones realizadas." },
+  { title: "Recomendaciones técnicas", description: "Detección temprana de condiciones relevantes y mejoras preventivas." },
 ];
 
 export default function BombasPage() {
   return (
     <div className="w-full text-slate-900 flex flex-col justify-between">
-      {/* Banner superior azul */}
-      <section className="relative w-full bg-[#103B5C] text-white overflow-hidden">
-        <div className="mx-auto flex w-full flex-col lg:flex-row items-center justify-between">
-          
-          {/* LADO IZQUIERDO */}
-          <div className="z-10 flex w-full flex-col justify-center px-6 py-6 sm:px-10 lg:w-1/2 lg:pl-16 xl:pl-24 lg:py-8">
-            <div className="mb-2">
-              <Image
-                src="/Logo YACHA.png"
-                alt="YACHA Logo"
-                width={220}
-                height={110}
-                className="h-auto w-40 sm:w-48 object-contain"
-              />
-            </div>
+      
+      {/* 01: Hero */}
+      <ServiceHero
+        title={
+          <>
+            Bombas <span className="text-[#D72638]">Contra Incendio</span>
+          </>
+        }
+        category="Sistemas Contra Incendios"
+        subheadline="Soluciones de ingeniería para proporcionar el caudal y la presión requeridos por los sistemas de protección contra incendios."
+        description="Desarrollamos sistemas de bombeo contra incendio en Lima y otras regiones del Perú, desde la evaluación y la ingeniería hasta el suministro, instalación, pruebas y puesta en funcionamiento."
+        imageSrc="/Bomba 1.png"
+        imageAlt="Bombas Contra Incendio YACHA"
+        whatsappMessage="¡Hola! Deseo cotizar un sistema de Bombas Contra Incendio con YACHA."
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Servicios", href: "/servicios/sistemas-contra-incendios" },
+          { label: "Bombas Contra Incendio" },
+        ]}
+      />
 
-            <span className="text-xs font-semibold uppercase tracking-wider text-gray-300">
-              Nuestros Servicios
-            </span>
+      {/* 02: Presión y Caudal */}
+      <ServiceProcess
+        title="Presión y caudal para la protección contra incendios"
+        description="El sistema de bombeo permite suministrar agua con el caudal y la presión requeridos para el funcionamiento de los sistemas de protección contra incendios que dependen de una alimentación hidráulica."
+        steps={pressureFlowSteps}
+      />
 
-            <h1 className="text-xl font-extrabold uppercase tracking-tight sm:text-2xl lg:text-3xl mt-1">
-              Bombas <span className="text-[#D72638]">Contra Incendio</span>
-            </h1>
-
-            <p className="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg">
-              Sistemas de bombeo confiables diseñados para garantizar presión, caudal y operación continua ante cualquier emergencia.
-            </p>
-
-            <div className="mt-3 flex items-center gap-3 text-gray-200">
-              <ShieldAlert className="h-8 w-8 text-[#D72638] shrink-0" />
-              <span className="text-gray-400 font-light text-lg">|</span>
-              <span className="text-xs font-semibold tracking-wide text-gray-200">
-                Ingeniería que protege <br /> lo que más importa
-              </span>
-            </div>
-          </div>
-
-          {/* LADO DERECHO */}
-          <div className="relative hidden self-stretch w-1/2 lg:block min-h-[260px] xl:min-h-[300px]">
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{
-                clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0 100%)",
-              }}
-            >
-              <Image
-                src="/Bomba 1.png"
-                alt="Bombas Contra Incendio YACHA"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#103B5C]/70 via-transparent to-transparent" />
-            </div>
-
-            <svg
-              className="absolute inset-0 h-full w-full pointer-events-none z-20"
-              preserveAspectRatio="none"
-              viewBox="0 0 100 100"
-            >
-              <line
-                x1="15"
-                y1="0"
-                x2="0"
-                y2="100"
-                stroke="#D72638"
-                strokeWidth="1.5"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-          </div>
-
+      {/* 03: Componentes del Sistema de Bombeo */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-12 py-10 lg:py-14 text-[#103B5C]">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D72638]">
+            Arquitectura del Sistema
+          </span>
+          <h2 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-[#103B5C] mt-1">
+            Componentes de un sistema de bombeo contra incendio
+          </h2>
+          <div className="mt-2 mx-auto w-12 h-1 bg-[#D72638] rounded-full" />
+          <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Un sistema de bombeo contra incendio integra equipos y componentes destinados a proporcionar las condiciones hidráulicas requeridas por la instalación. Su configuración se define de acuerdo con las características y necesidades de cada proyecto.
+          </p>
         </div>
+
+        <FeatureGrid features={bombComponents} columns={3} />
       </section>
 
-      {/* Grilla de Sub-servicios */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-12 py-6 lg:py-8 text-[#103B5C]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {bombFeatures.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm transition hover:shadow-md"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#103B5C] shrink-0 shadow-md">
-                  <Icon className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#103B5C]">
-                    {feature.title}
-                  </h3>
-                  <div className="my-1 h-[2px] w-8 bg-[#D72638]" />
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      {/* 04: Cada proyecto requiere una evaluación específica */}
+      <AlternatingSection
+        title="Cada proyecto requiere una evaluación específica"
+        subtitle="Analizamos"
+        description="Todo proyecto comienza con una visita y evaluación técnica para conocer las condiciones de la instalación, identificar las necesidades del sistema y recopilar la información necesaria para definir correctamente la solución de bombeo."
+        items={evaluationItems}
+        imageSrc="/Bomba 2.png"
+        imageAlt="Inspección de cuarto de bombas YACHA"
+        bgMuted={true}
+      />
+
+      {/* 05: Ingeniería y diseño */}
+      <AlternatingSection
+        title="Ingeniería y diseño del sistema de bombeo"
+        subtitle="Definimos"
+        description="A partir de la evaluación técnica, desarrollamos la ingeniería necesaria para definir las condiciones hidráulicas, la configuración y los equipos del sistema de bombeo de acuerdo con las características y requerimientos del proyecto."
+        items={engineeringItems}
+        imageSrc="/Bomba 1.png"
+        imageAlt="Ingeniería de sistema de bombeo contra incendios"
+        reverse={true}
+      />
+
+      {/* 06: Suministro e instalación */}
+      <AlternatingSection
+        title="Suministro e instalación del sistema de bombeo"
+        subtitle="Implementamos"
+        description="Implementamos la solución definida en la ingeniería mediante el suministro, instalación y configuración de los equipos y componentes correspondientes a cada proyecto."
+        items={installationItems}
+        technicalNote="Los equipos y componentes se seleccionan considerando las especificaciones técnicas, listados, aprobaciones y demás requisitos aplicables al proyecto."
+        imageSrc="/Bomba Contra Incendio.png"
+        imageAlt="Instalación de bombas contra incendios en campo"
+        bgMuted={true}
+      />
+
+      {/* 07: Configuración y funcionamiento */}
+      <ServiceProcess
+        title="Configuración y funcionamiento del sistema"
+        description="El sistema de bombeo opera de manera coordinada para responder a las condiciones hidráulicas de la instalación y proporcionar el caudal y la presión requeridos cuando el sistema lo demanda."
+        steps={operationSteps}
+      />
+
+      {/* 08: Pruebas y puesta en funcionamiento */}
+      <AlternatingSection
+        title="Pruebas y puesta en funcionamiento"
+        subtitle="Verificamos"
+        description="Antes de poner el sistema en funcionamiento, verificamos la operación y el desempeño del conjunto de bombeo de acuerdo con la configuración y los requerimientos definidos para el proyecto."
+        items={testingItems}
+        imageSrc="/Bomba 1.png"
+        imageAlt="Pruebas de caudal y presión en bombas contra incendios"
+        reverse={true}
+        bgMuted={true}
+      />
+
+      {/* 09: Normativa y criterios técnicos */}
+      <NormativaSection
+        title="Normativa y criterios técnicos aplicables"
+        description="Desarrollamos los sistemas de bombeo contra incendio considerando el marco normativo nacional y los estándares técnicos aplicables según las características, alcance y requerimientos de cada proyecto."
+        items={normativaBombas}
+      />
+
+      {/* 10: Mantenimiento y continuidad operativa */}
+      <AlternatingSection
+        title="Mantenimiento y continuidad operativa"
+        subtitle="Mantenemos"
+        description="Los sistemas de bombeo contra incendio requieren inspecciones, pruebas y mantenimiento para conservar su operatividad y confiabilidad durante su vida útil."
+        items={maintenanceItems}
+        link={{
+          label: "Conoce nuestro servicio de Mantenimiento de Sistemas Contra Incendios →",
+          href: "/servicios/mantenimiento",
+        }}
+        imageSrc="/Mantenimiento 2.png"
+        imageAlt="Mantenimiento preventivo de bombas contra incendio"
+      />
+
+      {/* 11: CTA Final */}
+      <ServiceCTA
+        title="¿Necesitas un sistema de bombeo contra incendio para tu proyecto?"
+        description="Cuéntanos sobre tu proyecto. Nuestro equipo revisará la información inicial y se pondrá en contacto contigo para conocer sus características y coordinar la visita técnica."
+        serviceName="Bombas Contra Incendio"
+        imageSrc="/Trato 2.png"
+      />
+
     </div>
   );
 }

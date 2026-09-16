@@ -1,125 +1,126 @@
-import { Flame, Bell, Pipette, FlameKindling, Droplets, Radio, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import {
+  Bell,
+  Gauge,
+  Droplets,
+  Wrench,
+  ShieldAlert,
+  ArrowRight,
+} from "lucide-react";
 
 const services = [
   {
-    id: "rociadores",
-    title: "Sistemas de Rociadores",
-    description:
-      "Diseño e instalación de redes húmedas, secas y preacción según NFPA 13, 13R, 13D.",
-    // Icono estilizado tipo rociador
-    icon: (
-      <svg
-        className="w-6 h-6 text-accent"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Boquilla de rociador / sprinkler head design */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v4M8 6h8M10 6l-2 5M14 6l2 5M7 11h10l-2 3H9l-2-3zM12 14v2" />
-        {/* Gotas proyectadas hacia abajo */}
-        <circle cx="8" cy="19" r="1" fill="currentColor" />
-        <circle cx="12" cy="20" r="1.2" fill="currentColor" />
-        <circle cx="16" cy="19" r="1" fill="currentColor" />
-        <circle cx="10" cy="22" r="0.8" fill="currentColor" />
-        <circle cx="14" cy="22" r="0.8" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
     id: "deteccion",
-    title: "Detección y Alarma",
+    title: "Sistemas de Detección y Alarma",
     description:
-      "Sistemas inteligentes de detección temprana y alarma contra incendios.",
-    // Icono estilo domo / detector de humo con ondas de alarma
-    icon: (
-      <svg
-        className="w-6 h-6 text-accent"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Base superior / Techo */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 3h12" />
-        {/* Domo del detector */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v2a7 7 0 0014 0V3" />
-        {/* Sensor central */}
-        <circle cx="12" cy="7" r="1.5" fill="currentColor" />
-        {/* Ondas expansivas de alarma / humo */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 14c2-1 6-1 8 0M6 18c4-1.5 8-1.5 12 0" />
-      </svg>
-    ),
+      "Detección temprana y alerta oportuna mediante paneles inteligentes, detectores y lazos supervisados bajo NFPA 72.",
+    icon: Bell,
+    href: "/servicios/deteccion",
   },
   {
     id: "bombas",
-    title: "Bombas contra Incendios",
+    title: "Bombas Contra Incendio",
     description:
-      "Suministros, instalación y mantenimiento de equipos certificados UL / FM.",
-    // Icono estilo hidrante / tubería de bombeo
-    icon: (
-      <svg
-        className="w-6 h-6 text-accent"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Cuerpo principal del hidrante / tubería */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3h6v3H9V3zM8 6h8v15H8V6z" />
-        {/* Tapa superior */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 2h4" />
-        {/* Salidas laterales (bocas de hidrante / tubos) */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10h3v4H5a1 1 0 01-1-1v-2a1 1 0 011-1zM16 10h3a1 1 0 011 1v2a1 1 0 01-1 1h-3v-4z" />
-        {/* Base de soporte */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 21h12" />
-      </svg>
-    ),
+      "Sistemas de bombeo estacionario diseñados para suministrar caudal y presión constantes conforme a NFPA 20.",
+    icon: Gauge,
+    href: "/servicios/bombas",
+  },
+  {
+    id: "agua",
+    title: "Sistemas de Agua Contra Incendios",
+    description:
+      "Diseño e instalación de redes de rociadores automáticos, tuberías húmedas/secas, gabinetes e hidrantes bajo NFPA 13.",
+    icon: Droplets,
+    href: "/servicios/agua",
+  },
+  {
+    id: "mantenimiento",
+    title: "Mantenimiento de Sistemas",
+    description:
+      "Inspecciones periódicas, pruebas operativas e intervenciones preventivas y correctivas bajo el estándar NFPA 25.",
+    icon: Wrench,
+    href: "/servicios/mantenimiento",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="servicios" className="w-full bg-white py-4 sm:py-6">
+    <section id="servicios" className="w-full bg-white py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Encabezado */}
-        <div className="text-center max-w-3xl mx-auto mb-5">
-          <h2 className="text-sm sm:text-base font-normal text-gray-800 tracking-wide uppercase">
-            Nuestros servicios
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#D72638]">
+            Línea de Protección Contra Incendios
+          </span>
+          <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-[#103B5C]">
+            Sistemas Contra Incendios
           </h2>
-          <p className="mt-1 text-xl sm:text-2xl md:text-3xl font-extrabold text-primary uppercase tracking-tight">
-            Soluciones integrales
+          <div className="mt-2 mx-auto w-12 h-1 bg-[#D72638] rounded-full" />
+          <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Desarrollamos proyectos de sistemas contra incendios en Lima y otras regiones del Perú: desde la evaluación técnica y diseño hasta el suministro, montaje, pruebas y mantenimiento.
           </p>
-          <div className="mt-2 mx-auto w-12 h-1 bg-accent rounded-full" />
         </div>
 
-        {/* Grilla de Servicios */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="group flex flex-col items-center text-center p-4 rounded-xl bg-background-secondary border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              {/* Contenedor del Icono */}
-              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
-                {service.icon}
-              </div>
-
-              {/* Título en text-primary */}
-              <h3 className="text-base sm:text-lg font-bold text-primary mb-2">
-                {service.title}
-              </h3>
-
-              {/* Descripción */}
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 flex-grow">
-                {service.description}
-              </p>
-
-              {/* Decoración inferior */}
-              <div className="w-10 h-1 bg-accent rounded-full transition-all duration-300 group-hover:w-16" />
+        {/* Banner destacado: Solución Integral */}
+        <div className="mb-8 rounded-2xl bg-[#103B5C] p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#D72638]">
+              <ShieldAlert className="h-7 w-7 text-[#D72638]" />
             </div>
-          ))}
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-red-300 block">
+                Solución Integral de Ingeniería
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-white">
+                Gestión completa del ciclo de vida de tu sistema contra incendios
+              </h3>
+            </div>
+          </div>
+          <Link
+            href="/servicios/sistemas-contra-incendios"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#D72638] px-5 py-2.5 text-xs font-bold text-white transition hover:bg-red-700 shrink-0"
+          >
+            <span>Ver solución integral</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        {/* Grilla de los 4 Sub-Servicios */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Link
+                key={service.id}
+                href={service.href}
+                className="group flex flex-col justify-between p-5 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#103B5C]"
+              >
+                <div>
+                  {/* Icono */}
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-[#D72638] group-hover:bg-[#103B5C] group-hover:text-white transition-colors">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  {/* Título */}
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-[#103B5C] group-hover:text-[#D72638] transition-colors mb-2">
+                    {service.title}
+                  </h3>
+
+                  {/* Descripción */}
+                  <p className="text-gray-600 text-xs leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Footer del card */}
+                <div className="mt-5 flex items-center gap-1 text-xs font-bold text-[#103B5C] group-hover:text-[#D72638] transition-colors">
+                  <span>Conocer más</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
       </div>

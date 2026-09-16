@@ -1,147 +1,270 @@
 import Image from "next/image";
+import Link from "next/link";
+import ServiceHero from "@/components/ServiceHero";
+import ServiceProcess from "@/components/ServiceProcess";
+import AlternatingSection from "@/components/AlternatingSection";
+import NormativaSection from "@/components/NormativaSection";
+import ServiceCTA from "@/components/ServiceCTA";
 import FeatureGrid from "@/components/FeatureGrid";
 import {
-  Flame,
-  Search,
-  Timer,
-  Wind,
-  Thermometer,
-  LayoutGrid,
   Bell,
+  Radio,
+  SlidersHorizontal,
   Volume2,
-  Building2,
-  ShieldCheck,
+  Cpu,
+  Zap,
 } from "lucide-react";
 
-const detectionFeatures = [
+export const metadata = {
+  title: "Sistemas de Detección y Alarma Contra Incendios | YACHA",
+  description:
+    "Ingeniería en sistemas de detección y alarma contra incendios en Lima y Perú: paneles inteligentes, detectores, notificación oportuna y cumplimiento NFPA 72.",
+};
+
+const detectionFlowSteps = [
+  { label: "Detectamos", description: "Identificación de condiciones asociadas a un posible evento de incendio.", number: "01" },
+  { label: "Procesamos", description: "Recepción y procesamiento de las señales del sistema en tiempo real.", number: "02" },
+  { label: "Alertamos", description: "Activación de las señales de alarma sonora y visual correspondientes.", number: "03" },
+  { label: "Facilitamos respuesta", description: "Información oportuna para apoyar las acciones de evacuación y brigadas.", number: "04" },
+];
+
+const detectionComponents = [
   {
-    icon: Flame,
-    title: "Detección de Incendios",
-    description: "Identificamos de manera oportuna la presencia de humo o calor.",
+    icon: Cpu,
+    title: "Panel o central de alarma",
+    description: "Recibe, procesa y gestiona las señales de todos los dispositivos conectados al sistema.",
   },
   {
-    icon: Search,
-    title: "Sistema de Detección",
-    description: "Soluciones integrales adaptadas a cada tipo de edificación.",
-  },
-  {
-    icon: Timer,
-    title: "Detección Temprana",
-    description: "Actuamos en los primeros segundos para minimizar riesgos y daños.",
-  },
-  {
-    icon: Wind,
-    title: "Detectores de Humo",
-    description: "Detectores fotoeléctricos y de ionización de alta sensibilidad.",
-  },
-  {
-    icon: Thermometer,
-    title: "Detectores de Temperatura",
-    description: "Tecnología térmica para detección confiable en diversos entornos.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Panel Contra Incendio",
-    description: "Paneles inteligentes para monitoreo y control del sistema de detección.",
+    icon: Radio,
+    title: "Detectores especializados",
+    description: "Dispositivos fotoeléctricos, térmicos o multicriterio para identificar rápidamente fuego o humo.",
   },
   {
     icon: Bell,
-    title: "Panel de Alarma",
-    description: "Gestión centralizada de alarmas y eventos en tiempo real.",
+    title: "Estaciones manuales",
+    description: "Permiten al personal iniciar manualmente una señal de alarma ante una situación de emergencia.",
   },
   {
     icon: Volume2,
-    title: "Alarma Contra Incendio",
-    description: "Aviso audible y visual para evacuación y alerta inmediata.",
+    title: "Dispositivos de notificación",
+    description: "Generan señales audibles y luces estroboscópicas para comunicar inmediatamente la condición de alarma.",
   },
   {
-    icon: Building2,
-    title: "Central de Incendios",
-    description: "Supervisión completa del sistema para máxima seguridad.",
+    icon: SlidersHorizontal,
+    title: "Módulos e interfaces",
+    description: "Permiten supervisar, controlar o intercambiar señales con ascensores, bombas y sistemas relacionados.",
   },
+  {
+    icon: Zap,
+    title: "Fuentes y auxiliares",
+    description: "Proporcionan alimentación continua y respaldo de energía para garantizar la operación ininterrumpida.",
+  },
+];
+
+const evaluationItems = [
+  { title: "Uso de la edificación", description: "Clasificación de riesgo comercial, industrial, corporativo o residencial." },
+  { title: "Distribución de ambientes", description: "Revisión de alturas, cielorrasos, áreas de almacenamiento y ductos." },
+  { title: "Riesgos y entorno", description: "Evaluación de fuentes de calor, ventilación y factores ambientales." },
+  { title: "Sistemas existentes", description: "Compatibilidad con infraestructura y cableado actualmente instalado." },
+  { title: "Necesidades de integración", description: "Interacción requerida con HVAC, presurización de escaleras y accesos." },
+  { title: "Requerimientos normativos", description: "Disposiciones del RNE A.130, CNE y lineamientos NFPA 72." },
+];
+
+const engineeringItems = [
+  { title: "Arquitectura del sistema", description: "Definición técnica entre sistema convencional o direccionable según el alcance." },
+  { title: "Criterios de detección", description: "Selección del método idóneo: óptico, térmico, por haz de luz o aspiración." },
+  { title: "Selección de dispositivos", description: "Equipos certificados para cada zona y condición ambiental de la obra." },
+  { title: "Ubicación y cobertura", description: "Distribución planimétrica asegurando radios de cobertura normativos." },
+  { title: "Planos y especificaciones", description: "Diagramas unifilares, recorridos de tuberías y memorias técnicas." },
+  { title: "Integración de sistemas", description: "Matrices causa-efecto para activación coordinada con otras especialidades." },
+];
+
+const installationItems = [
+  { title: "Suministro de componentes", description: "Provisión de paneles, sensores y estaciones con estándares certificados." },
+  { title: "Instalación en obra", description: "Montaje físico de dispositivos en ubicaciones aprobadas por la ingeniería." },
+  { title: "Canalización y cableado", description: "Tendido de tubería conduit y cable contra fuego (FPL / FPLR / FPLP)." },
+  { title: "Configuración y programación", description: "Programación de la central, zonas, lazos y nombres de dispositivos." },
+  { title: "Integración de señales", description: "Conexión de módulos de monitoreo y control con sub-sistemas del edificio." },
+  { title: "Control de ejecución", description: "Supervisión técnica de acuerdo a la documentación y planos aprobados." },
+];
+
+const integrationSteps = [
+  { label: "01 — Iniciación", description: "Detectores de humo/temperatura, estaciones manuales y módulos supervisados." },
+  { label: "02 — Procesamiento", description: "Panel o central de alarma procesa el evento y ejecuta la lógica de control." },
+  { label: "03 — Notificación", description: "Sirenas con estrobo alertan a los ocupantes para una evacuación ordenada." },
+  { label: "04 — Integración", description: "Liberación de puertas, retorno de ascensores y señales a sistemas vinculados." },
+];
+
+const testingItems = [
+  { title: "Verificación de dispositivos", description: "Prueba individual de cada detector con gas/humo sintético y estación manual." },
+  { title: "Supervisión de señales", description: "Comprobación de líneas abiertas, fallas a tierra y estado de baterías." },
+  { title: "Alarmas y notificación", description: "Medición de niveles de presión sonora (dB) y visibilidad de estrobos." },
+  { title: "Integraciones cruzadas", description: "Verificación en campo de la matriz causa-efecto con sistemas de terceros." },
+  { title: "Operación del sistema", description: "Simulación de corte de energía y respuesta integral de la central." },
+];
+
+const normativaDeteccion = [
+  {
+    code: "RNE / A.130",
+    name: "Reglamento Nacional de Edificaciones",
+    description: "Requisitos de seguridad aplicables a las edificaciones y sistemas de detección y alarma.",
+  },
+  {
+    code: "CNE",
+    name: "Código Nacional de Electricidad",
+    description: "Requisitos aplicables a las instalaciones eléctricas y cableado asociado al sistema de alarma.",
+  },
+  {
+    code: "NTP",
+    name: "Normas Técnicas Peruanas",
+    description: "Estándares peruanos aplicables según los componentes, señalización y alcance del proyecto.",
+  },
+  {
+    code: "NFPA 72",
+    name: "National Fire Alarm and Signaling Code",
+    description: "Código técnico de referencia internacional para diseño, instalación e inspección de alarmas.",
+  },
+];
+
+const maintenanceItems = [
+  { title: "Inspección periódica", description: "Revisión física del panel, baterías, cableados y estado de los detectores." },
+  { title: "Pruebas de respuesta", description: "Verificación funcional regular de lazos de iniciación y circuitos de aviso." },
+  { title: "Limpieza y calibración", description: "Mantenimiento preventivo para prevenir falsas alarmas por acumulación de polvo." },
+  { title: "Documentación de registros", description: "Dossier con reporte técnico del estado de operatividad de la central." },
+  { title: "Recomendaciones técnicas", description: "Identificación de mejoras, reemplazo de fuentes o ampliaciones de zona." },
 ];
 
 export default function DeteccionPage() {
   return (
     <div className="w-full text-slate-900 flex flex-col justify-between">
-      {/* Banner superior azul */}
-      <section className="relative w-full bg-[#103B5C] text-white overflow-hidden">
-        <div className="mx-auto flex w-full flex-col lg:flex-row items-center justify-between">
-          
-          {/* LADO IZQUIERDO */}
-          <div className="z-10 flex w-full flex-col justify-center px-6 py-6 sm:px-10 lg:w-1/2 lg:pl-16 xl:pl-24 lg:py-8">
-            <div className="mb-2">
-              <Image
-                src="/Logo YACHA.png"
-                alt="YACHA Logo"
-                width={220}
-                height={110}
-                className="h-auto w-40 sm:w-48 object-contain"
-              />
-            </div>
+      
+      {/* 01: Hero */}
+      <ServiceHero
+        title={
+          <>
+            Sistemas de Detección y <span className="text-[#D72638]">Alarma Contra Incendios</span>
+          </>
+        }
+        category="Sistemas Contra Incendios"
+        subheadline="Soluciones de ingeniería para detectar oportunamente eventos de incendio y activar los mecanismos de alarma y notificación."
+        description="Desarrollamos sistemas de detección y alarma contra incendios en Lima y otras regiones del Perú, desde la evaluación y el diseño hasta el suministro, instalación, pruebas y puesta en funcionamiento."
+        imageSrc="/PANEL CONTRA INCENDIO.png"
+        imageAlt="Sistemas de Detección y Alarma YACHA"
+        whatsappMessage="¡Hola! Deseo cotizar un Sistema de Detección y Alarma Contra Incendios con YACHA."
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Servicios", href: "/servicios/sistemas-contra-incendios" },
+          { label: "Detección y Alarma" },
+        ]}
+      />
 
-            <span className="text-xs font-semibold uppercase tracking-wider text-gray-300">
-              Nuestros Servicios
-            </span>
+      {/* 02: Detección temprana y respuesta oportuna */}
+      <ServiceProcess
+        title="Detección temprana y respuesta oportuna"
+        description="Un sistema de detección y alarma permite identificar oportunamente condiciones asociadas a un incendio, procesar las señales recibidas y generar las alertas necesarias para facilitar una respuesta adecuada."
+        steps={detectionFlowSteps}
+      />
 
-            <h1 className="text-xl font-extrabold uppercase tracking-tight sm:text-2xl lg:text-3xl mt-1">
-              Sistemas de <span className="text-[#D72638]">Detección</span>
-            </h1>
-
-            <p className="mt-2 text-xs sm:text-sm text-gray-200 leading-relaxed max-w-lg">
-              Tecnología avanzada para la detección temprana de incendios y protección de vidas y activos.
-            </p>
-
-            <div className="mt-3 flex items-center gap-3 text-gray-200">
-              <ShieldCheck className="h-8 w-8 text-[#D72638] shrink-0" />
-              <span className="text-gray-400 font-light text-lg">|</span>
-              <span className="text-xs font-semibold tracking-wide text-gray-200">
-                Ingeniería que protege <br /> lo que más importa
-              </span>
-            </div>
-          </div>
-
-          {/* LADO DERECHO */}
-          <div className="relative hidden self-stretch w-1/2 lg:block min-h-[260px] xl:min-h-[300px]">
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{
-                clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0 100%)",
-              }}
-            >
-              <Image
-                src="/PANEL CONTRA INCENDIO.png"
-                alt="Sistemas de Detección YACHA"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#103B5C]/70 via-transparent to-transparent" />
-            </div>
-
-            <svg
-              className="absolute inset-0 h-full w-full pointer-events-none z-20"
-              preserveAspectRatio="none"
-              viewBox="0 0 100 100"
-            >
-              <line
-                x1="15"
-                y1="0"
-                x2="0"
-                y2="100"
-                stroke="#D72638"
-                strokeWidth="1.5"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-          </div>
-
+      {/* 03: Componentes */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-12 py-10 lg:py-14 text-[#103B5C]">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D72638]">
+            Dispositivos & Equipamiento
+          </span>
+          <h2 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-[#103B5C] mt-1">
+            Componentes de un sistema de detección y alarma contra incendios
+          </h2>
+          <div className="mt-2 mx-auto w-12 h-1 bg-[#D72638] rounded-full" />
+          <p className="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Los sistemas de detección y alarma integran diferentes dispositivos para identificar condiciones de incendio, procesar señales y generar las alertas correspondientes según cada proyecto.
+          </p>
         </div>
+
+        <FeatureGrid features={detectionComponents} columns={3} />
       </section>
 
-      {/* Grilla de Sub-servicios */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-12 py-6 lg:py-8 text-[#103B5C]">
-        <FeatureGrid features={detectionFeatures} />
-      </section>
+      {/* 04: Cada instalación requiere una evaluación específica */}
+      <AlternatingSection
+        title="Cada instalación requiere una evaluación específica"
+        subtitle="Analizamos"
+        description="Todo proyecto comienza con una visita y evaluación técnica para conocer las características de la instalación, identificar sus necesidades y recopilar la información necesaria para definir correctamente el sistema de detección y alarma."
+        items={evaluationItems}
+        imageSrc="/Sistema de detección de incendios.png"
+        imageAlt="Evaluación de sistema de detección YACHA"
+        bgMuted={true}
+      />
+
+      {/* 05: Ingeniería y diseño del sistema */}
+      <AlternatingSection
+        title="Ingeniería y diseño del sistema de detección y alarma"
+        subtitle="Definimos"
+        description="A partir de la evaluación técnica, desarrollamos la ingeniería necesaria para definir la configuración, los dispositivos, su ubicación y los criterios de funcionamiento del sistema de acuerdo con las características y requerimientos del proyecto."
+        items={engineeringItems}
+        imageSrc="/Sistema 1.png"
+        imageAlt="Diseño de planos y lazos de alarma contra incendio"
+        reverse={true}
+      />
+
+      {/* 06: Suministro e instalación */}
+      <AlternatingSection
+        title="Suministro e instalación del sistema de detección y alarma"
+        subtitle="Implementamos"
+        description="Implementamos la solución definida en la ingeniería mediante el suministro, instalación y configuración de los equipos y dispositivos correspondientes a cada proyecto."
+        items={installationItems}
+        technicalNote="Los equipos y dispositivos se seleccionan considerando las especificaciones técnicas, listados, aprobaciones y demás requisitos aplicables al proyecto."
+        imageSrc="/PANEL CONTRA INCENDIO.png"
+        imageAlt="Instalación de panel contra incendio YACHA"
+        bgMuted={true}
+      />
+
+      {/* 07: Integración y funcionamiento */}
+      <ServiceProcess
+        title="Integración y funcionamiento del sistema"
+        description="Los dispositivos del sistema trabajan de manera coordinada para detectar o recibir una señal de emergencia, procesarla y activar las acciones de alarma, notificación o control definidas para el proyecto."
+        steps={integrationSteps}
+      />
+
+      {/* 08: Pruebas y puesta en funcionamiento */}
+      <AlternatingSection
+        title="Pruebas y puesta en funcionamiento"
+        subtitle="Verificamos"
+        description="Antes de poner el sistema en funcionamiento, verificamos la correcta operación y respuesta de sus componentes de acuerdo con la configuración definida para el proyecto."
+        items={testingItems}
+        imageSrc="/Sistema de detección de incendios.png"
+        imageAlt="Pruebas funcionales de detectores de humo y alarma"
+        reverse={true}
+        bgMuted={true}
+      />
+
+      {/* 09: Normativa y criterios técnicos */}
+      <NormativaSection
+        title="Normativa y criterios técnicos aplicables"
+        description="Desarrollamos los sistemas de detección y alarma considerando el marco normativo nacional y los estándares técnicos aplicables según las características, alcance y requerimientos de cada proyecto."
+        items={normativaDeteccion}
+      />
+
+      {/* 10: Mantenimiento y continuidad operativa */}
+      <AlternatingSection
+        title="Mantenimiento y continuidad operativa"
+        subtitle="Mantenemos"
+        description="Los sistemas de detección y alarma requieren inspecciones, pruebas y mantenimiento para conservar su operatividad y confiabilidad durante su vida útil."
+        items={maintenanceItems}
+        link={{
+          label: "Conoce nuestro servicio de Mantenimiento de Sistemas Contra Incendios →",
+          href: "/servicios/mantenimiento",
+        }}
+        imageSrc="/Mantenimiento 3.png"
+        imageAlt="Mantenimiento de panel y detectores contra incendios"
+      />
+
+      {/* 11: CTA Final */}
+      <ServiceCTA
+        title="¿Necesitas un sistema de detección y alarma para tu proyecto?"
+        description="Cuéntanos sobre tu proyecto. Nuestro equipo revisará la información inicial y se pondrá en contacto contigo para conocer sus características y coordinar la visita técnica."
+        serviceName="Sistemas de Detección y Alarma Contra Incendios"
+        imageSrc="/Trato 1.png"
+      />
+
     </div>
   );
 }
