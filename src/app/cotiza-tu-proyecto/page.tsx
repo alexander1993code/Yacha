@@ -227,7 +227,7 @@ function CotizaForm() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 py-12 lg:py-16">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
           <Link href="/" className="hover:text-[#103B5C]">Inicio</Link>
@@ -270,7 +270,7 @@ function CotizaForm() {
               </span>
               <span>Servicio</span>
             </div>
-            
+
             <div className="h-0.5 flex-1 mx-3 bg-slate-200" />
 
             <div className={`flex items-center gap-2 ${step >= 2 ? "text-[#103B5C]" : "text-slate-400"}`}>
@@ -365,7 +365,7 @@ function CotizaForm() {
 
           /* FORM CONTENT BY STEP */
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xs border border-slate-200/80">
-            
+
             {/* STEP 1: SERVICIO */}
             {step === 1 && (
               <div>
@@ -536,8 +536,8 @@ function CotizaForm() {
                       Cuéntanos qué trabajo necesitas realizar y cualquier información que consideres importante.
                     </span>
                   </div>
-
-                  <div>
+                  {/*comentando hasta mvp2*/}
+                  {/* <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1">
                       Fotografías, planos o documentos (opcional)
                     </label>
@@ -573,7 +573,7 @@ function CotizaForm() {
                         ))}
                       </div>
                     )}
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100">

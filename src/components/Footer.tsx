@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Users,
   FileText,
@@ -90,11 +91,11 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} YACHA. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="/nosotros" className="hover:text-amber-400 transition">Nosotros</a>
-            <a href="/sistemas-contra-incendios" className="hover:text-amber-400 transition">Protección Contra Incendios</a>
-            <a href="/servicios-generales" className="hover:text-amber-400 transition">Servicios Generales</a>
-            <a href="/contacto" className="hover:text-amber-400 transition">Contacto</a>
-            <a href="/cotiza-tu-proyecto" className="hover:text-amber-400 transition font-medium text-amber-400">Cotiza tu proyecto</a>
+            <Link href="/nosotros" className="hover:text-amber-400 transition">Nosotros</Link>
+            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-amber-400 transition">Protección Contra Incendios</Link>
+            <Link href="/servicios/servicios-generales" className="hover:text-amber-400 transition">Servicios Generales</Link>
+            <Link href="/contacto" className="hover:text-amber-400 transition">Contacto</Link>
+            <Link href="/cotiza-tu-proyecto" className="hover:text-amber-400 transition font-medium text-amber-400">Cotiza tu proyecto</Link>
           </div>
         </div>
       </div>

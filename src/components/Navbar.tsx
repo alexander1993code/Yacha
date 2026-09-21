@@ -11,20 +11,20 @@ export default function Navbar() {
 
   const mainPciService = {
     label: "Protección Contra Incendios",
-    href: "/sistemas-contra-incendios",
+    href: "/servicios/sistemas-contra-incendios",
     subtitle: "Nuestra especialidad principal",
   };
 
   const pciSubServices = [
-    { label: "Sistemas de Detección y Alarma", href: "/sistemas-deteccion-alarma-contra-incendios" },
-    { label: "Bombas Contra Incendio", href: "/bombas-contra-incendio" },
-    { label: "Sistemas de Agua Contra Incendios", href: "/sistemas-agua-contra-incendios" },
-    { label: "Mantenimiento de Sistemas", href: "/mantenimiento-sistemas-contra-incendios" },
+    { label: "Sistemas de Detección y Alarma", href: "/servicios/deteccion" },
+    { label: "Bombas Contra Incendio", href: "/servicios/bombas" },
+    { label: "Sistemas de Agua Contra Incendios", href: "/servicios/agua" },
+    { label: "Mantenimiento de Sistemas", href: "/servicios/mantenimiento" },
   ];
 
   const mainGeneralServices = {
     label: "Servicios Generales",
-    href: "/servicios-generales",
+    href: "/servicios/servicios-generales",
     subtitle: "Mantenimiento y adecuación de infraestructura",
   };
 

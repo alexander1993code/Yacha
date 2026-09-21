@@ -35,7 +35,7 @@ export default function NosotrosPage() {
               </p>
               <div>
                 <Link
-                  href="/sistemas-contra-incendios"
+                  href="/servicios/sistemas-contra-incendios"
                   className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-900 transition shadow-lg hover:shadow-xl"
                 >
                   <span>Conoce nuestros servicios</span>
@@ -169,7 +169,7 @@ export default function NosotrosPage() {
               </div>
 
               <Link
-                href="/sistemas-contra-incendios"
+                href="/servicios/sistemas-contra-incendios"
                 className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shadow-lg"
               >
                 <span>Conoce nuestras soluciones</span>
@@ -283,7 +283,7 @@ export default function NosotrosPage() {
 
           <div>
             <Link
-              href="/servicios-generales"
+              href="/servicios/servicios-generales"
               className="inline-flex items-center gap-2 text-sm font-bold text-[#103B5C] hover:text-amber-600 transition"
             >
               <span>Conoce nuestros Servicios Generales</span>

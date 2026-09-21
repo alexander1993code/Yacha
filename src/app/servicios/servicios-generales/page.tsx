@@ -21,7 +21,7 @@ export default function ServiciosGeneralesPage() {
           <nav className="flex items-center gap-2 text-xs font-medium text-slate-300 mb-6">
             <Link href="/" className="hover:text-amber-400 transition">Inicio</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
-            <Link href="/sistemas-contra-incendios" className="hover:text-amber-400 transition">Servicios</Link>
+            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-amber-400 transition">Servicios</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
             <span className="text-amber-400 font-semibold">Servicios Generales</span>
           </nav>
