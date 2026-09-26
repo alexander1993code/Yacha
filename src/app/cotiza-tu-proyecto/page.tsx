@@ -240,7 +240,7 @@ function CotizaForm() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#103B5C] mb-2">
             Cotiza tu proyecto
           </h1>
-          <p className="text-sm font-semibold text-amber-600 mb-3">
+          <p className="text-sm font-semibold text-slate-600 mb-3">
             Cuéntanos qué necesitas y revisaremos la información para definir los siguientes pasos.
           </p>
           <p className="text-xs text-slate-600 leading-relaxed mb-4">
@@ -321,8 +321,8 @@ function CotizaForm() {
 
         {/* Validation Error Banner */}
         {validationError && (
-          <div className="bg-amber-50 border border-amber-200 text-amber-800 p-3 rounded-xl mb-6 text-xs flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 text-amber-600 shrink-0" />
+          <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-xl mb-6 text-xs flex items-center gap-2">
+            <AlertCircle className="h-4 w-4 text-red-500 shrink-0" />
             <span>{validationError}</span>
           </div>
         )}
@@ -381,11 +381,11 @@ function CotizaForm() {
                   <button
                     type="button"
                     onClick={() => handleCategoryChange("pci")}
-                    className={`p-5 rounded-xl border text-left transition ${category === "pci" ? "border-amber-500 bg-amber-50/50 shadow-2xs" : "border-slate-200 hover:border-slate-300 bg-white"}`}
+                    className={`p-5 rounded-xl border text-left transition ${category === "pci" ? "border-[#D72638] bg-red-50/40 shadow-2xs" : "border-slate-200 hover:border-slate-300 bg-white"}`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-extrabold text-sm text-[#103B5C]">Protección Contra Incendios</span>
-                      <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Especialidad</span>
+                      <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-red-100 text-red-800">Especialidad</span>
                     </div>
                     <p className="text-xs text-slate-500">
                       Sistemas y servicios para la protección contra incendios.
@@ -395,7 +395,7 @@ function CotizaForm() {
                   <button
                     type="button"
                     onClick={() => handleCategoryChange("sg")}
-                    className={`p-5 rounded-xl border text-left transition ${category === "sg" ? "border-amber-500 bg-amber-50/50 shadow-2xs" : "border-slate-200 hover:border-slate-300 bg-white"}`}
+                    className={`p-5 rounded-xl border text-left transition ${category === "sg" ? "border-[#103B5C] bg-blue-50/40 shadow-2xs" : "border-slate-200 hover:border-slate-300 bg-white"}`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-extrabold text-sm text-slate-800">Servicios Generales</span>
@@ -495,7 +495,7 @@ function CotizaForm() {
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="text-xs font-bold text-amber-600 hover:underline"
+                    className="text-xs font-bold text-[#103B5C] hover:underline"
                   >
                     Editar servicio
                   </button>
@@ -620,14 +620,14 @@ function CotizaForm() {
                       <span className="font-bold text-[#103B5C]">Servicios: </span>
                       <span>{selectedServices.join(", ")}</span>
                     </div>
-                    <button type="button" onClick={() => setStep(1)} className="text-amber-600 font-bold text-[11px] hover:underline">Editar</button>
+                    <button type="button" onClick={() => setStep(1)} className="text-[#103B5C] font-bold text-[11px] hover:underline">Editar</button>
                   </div>
                   <div className="flex justify-between items-center">
                     <div>
                       <span className="font-bold text-[#103B5C]">Ubicación: </span>
                       <span>{location}</span>
                     </div>
-                    <button type="button" onClick={() => setStep(2)} className="text-amber-600 font-bold text-[11px] hover:underline">Editar</button>
+                    <button type="button" onClick={() => setStep(2)} className="text-[#103B5C] font-bold text-[11px] hover:underline">Editar</button>
                   </div>
                 </div>
 
@@ -726,7 +726,7 @@ function CotizaForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-slate-950 font-bold text-xs flex items-center gap-2 transition shadow-md"
+                    className="px-6 py-3 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 disabled:opacity-50 text-white font-bold text-xs flex items-center gap-2 shadow-md"
                   >
                     <span>{isSubmitting ? "Enviando solicitud..." : "Enviar solicitud"}</span>
                     {!isSubmitting && <ArrowRight className="h-4 w-4" />}

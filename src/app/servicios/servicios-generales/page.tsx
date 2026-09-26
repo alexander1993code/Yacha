@@ -13,17 +13,17 @@ export default function ServiciosGeneralesPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
-      
+
       {/* 01 · Hero */}
       <section className="bg-gradient-to-b from-[#103B5C] to-[#0A273E] text-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <nav className="flex items-center gap-2 text-xs font-medium text-slate-300 mb-6">
-            <Link href="/" className="hover:text-amber-400 transition">Inicio</Link>
+            <Link href="/" className="hover:text-white transition">Inicio</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
-            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-amber-400 transition">Servicios</Link>
+            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-white transition">Servicios</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
-            <span className="text-amber-400 font-semibold">Servicios Generales</span>
+            <span className="text-slate-300 font-semibold">Servicios Generales</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -34,17 +34,17 @@ export default function ServiciosGeneralesPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
                 Servicios Generales
               </h1>
-              <p className="text-lg font-semibold text-amber-400 mb-4">
+              <p className="text-lg font-semibold text-slate-200 mb-4">
                 Soluciones para el mantenimiento, adecuación y mejora de infraestructura.
               </p>
               <p className="text-base text-slate-200 leading-relaxed mb-6 max-w-2xl">
                 Desarrollamos trabajos de mantenimiento, reparación y adecuación de infraestructura de acuerdo con las necesidades y condiciones de cada proyecto.
               </p>
-              
+
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <Link
                   href="/cotiza-tu-proyecto?categoria=servicios-generales"
-                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shadow-lg"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-6 py-3.5 text-sm font-bold text-white shadow-lg"
                 >
                   <span>Cotiza tu proyecto</span>
                   <ArrowRight className="h-4 w-4" />
@@ -61,19 +61,19 @@ export default function ServiciosGeneralesPage() {
               <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl p-8 bg-gradient-to-br from-slate-900 to-[#103B5C]">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <Wrench className="h-5 w-5 text-amber-400 shrink-0" />
+                    <Wrench className="h-5 w-5 text-slate-300 shrink-0" />
                     <span className="text-sm font-semibold text-white">Mantenimiento de Infraestructura</span>
                   </div>
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <Wrench className="h-5 w-5 text-amber-400 shrink-0" />
+                    <Wrench className="h-5 w-5 text-slate-300 shrink-0" />
                     <span className="text-sm font-semibold text-white">Pintura y Resanamiento</span>
                   </div>
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <Wrench className="h-5 w-5 text-amber-400 shrink-0" />
+                    <Wrench className="h-5 w-5 text-slate-300 shrink-0" />
                     <span className="text-sm font-semibold text-white">Mantenimiento Eléctrico</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Wrench className="h-5 w-5 text-amber-400 shrink-0" />
+                    <Wrench className="h-5 w-5 text-slate-300 shrink-0" />
                     <span className="text-sm font-semibold text-white">Drywall y Adecuación</span>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export default function ServiciosGeneralesPage() {
             {/* 1 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Mantenimiento de infraestructura
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -155,7 +155,7 @@ export default function ServiciosGeneralesPage() {
             {/* 2 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Pintura y resanamiento
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -166,7 +166,7 @@ export default function ServiciosGeneralesPage() {
             {/* 3 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Mantenimiento eléctrico
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -177,7 +177,7 @@ export default function ServiciosGeneralesPage() {
             {/* 4 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Obras civiles
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -188,7 +188,7 @@ export default function ServiciosGeneralesPage() {
             {/* 5 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Drywall y acabados
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -199,7 +199,7 @@ export default function ServiciosGeneralesPage() {
             {/* 6 */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                <span className="h-2 w-2 rounded-full bg-[#103B5C]" />
                 Adecuación de espacios
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -224,7 +224,7 @@ export default function ServiciosGeneralesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
-              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">01</span>
+              <span className="text-xs font-bold text-[#103B5C] uppercase tracking-wider block mb-1">01</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Necesidad</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Identificamos los trabajos o mejoras requeridos para la infraestructura.
@@ -232,7 +232,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
-              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">02</span>
+              <span className="text-xs font-bold text-[#103B5C] uppercase tracking-wider block mb-1">02</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Evaluación</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Revisamos las condiciones del espacio y los elementos involucrados.
@@ -240,7 +240,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 relative">
-              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">03</span>
+              <span className="text-xs font-bold text-[#103B5C] uppercase tracking-wider block mb-1">03</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Alcance</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Definimos las actividades necesarias para atender el requerimiento.
@@ -301,7 +301,7 @@ export default function ServiciosGeneralesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <span className="text-amber-500 font-extrabold text-sm block mb-1">01</span>
+              <span className="text-[#103B5C] font-extrabold text-sm block mb-1">01</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Preparación</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Organizamos las condiciones necesarias antes de iniciar los trabajos.
@@ -309,7 +309,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <span className="text-amber-500 font-extrabold text-sm block mb-1">02</span>
+              <span className="text-[#103B5C] font-extrabold text-sm block mb-1">02</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Ejecución</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Desarrollamos las actividades definidas para la intervención.
@@ -317,7 +317,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <span className="text-amber-500 font-extrabold text-sm block mb-1">03</span>
+              <span className="text-[#103B5C] font-extrabold text-sm block mb-1">03</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Supervisión</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Realizamos seguimiento al desarrollo de los trabajos.
@@ -325,7 +325,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-              <span className="text-amber-500 font-extrabold text-sm block mb-1">04</span>
+              <span className="text-[#103B5C] font-extrabold text-sm block mb-1">04</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Control</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Verificamos las condiciones de ejecución y el alcance realizado.
@@ -357,8 +357,8 @@ export default function ServiciosGeneralesPage() {
               <span>+</span>
               <span className="px-3 py-2 bg-white/10 rounded-lg">Pintura y acabados</span>
             </div>
-            
-            <div className="my-4 text-center text-amber-400 font-bold text-xs uppercase tracking-wider">
+
+            <div className="my-4 text-center text-slate-300 font-bold text-xs uppercase tracking-wider">
               ➔ Intervención coordinada
             </div>
 
@@ -422,7 +422,7 @@ export default function ServiciosGeneralesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-              <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider block mb-1">Mantenimiento de Infraestructura</span>
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-1">Mantenimiento de Infraestructura</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Mantenimiento integral de espacio corporativo</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Adecuación de áreas de trabajo, resanado de muros y mantenimiento preventivo de instalaciones eléctricas.
@@ -430,7 +430,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-              <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider block mb-1">Drywall y Acabados</span>
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-1">Drywall y Acabados</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Acondicionamiento de tabiquería y divisiones</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Instalación de elementos en drywall y acabados de pintura para la distribución de ambientes comerciales.
@@ -438,7 +438,7 @@ export default function ServiciosGeneralesPage() {
             </div>
 
             <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-              <span className="text-[10px] uppercase font-bold text-amber-600 tracking-wider block mb-1">Obras Civiles & Pintura</span>
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-1">Obras Civiles & Pintura</span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Reparación y conservación de estructuras</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Trabajos de reparación de bordes, tratamiento de superficies y aplicación de recubrimientos de pintura.
@@ -452,7 +452,7 @@ export default function ServiciosGeneralesPage() {
       <section className="py-16 bg-[#103B5C] text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-7">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
                 ¿Necesitas realizar trabajos en tu infraestructura?
@@ -463,15 +463,15 @@ export default function ServiciosGeneralesPage() {
 
               <div className="space-y-3 mb-8 text-xs text-slate-300">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-amber-400 shrink-0" />
+                  <span className="h-2 w-2 rounded-full bg-slate-300 shrink-0" />
                   <span><strong>Revisamos tu solicitud:</strong> Conocemos el requerimiento.</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-amber-400 shrink-0" />
+                  <span className="h-2 w-2 rounded-full bg-slate-300 shrink-0" />
                   <span><strong>Nos comunicamos contigo:</strong> Recopilamos la información necesaria.</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-amber-400 shrink-0" />
+                  <span className="h-2 w-2 rounded-full bg-slate-300 shrink-0" />
                   <span><strong>Coordinamos la evaluación:</strong> Cuando corresponda, revisamos las condiciones del espacio.</span>
                 </div>
               </div>
@@ -479,7 +479,7 @@ export default function ServiciosGeneralesPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/cotiza-tu-proyecto?categoria=servicios-generales"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shadow-md"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-6 py-3.5 text-sm font-bold text-white shadow-md"
                 >
                   <span>Cotiza tu proyecto</span>
                   <ArrowRight className="h-4 w-4" />
@@ -499,7 +499,7 @@ export default function ServiciosGeneralesPage() {
 
             <div className="lg:col-span-5">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <h3 className="text-sm font-bold text-amber-400 mb-2 uppercase tracking-wider">Atención de requerimientos</h3>
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wider">Atención de requerimientos</h3>
                 <p className="text-xs text-slate-300 leading-relaxed mb-4">
                   Recuerda que puedes preseleccionar tus trabajos de mantenimiento en el formulario dinámico de cotización.
                 </p>

@@ -10,16 +10,16 @@ export const metadata = {
 export default function NosotrosPage() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
-      
+
       {/* B01 — Hero / Nosotros */}
       <section className="bg-gradient-to-b from-[#103B5C] to-[#0A273E] text-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs font-medium text-slate-300 mb-6">
-            <Link href="/" className="hover:text-amber-400 transition">Inicio</Link>
+            <Link href="/" className="hover:text-white transition">Inicio</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
-            <span className="text-amber-400 font-semibold">Nosotros</span>
+            <span className="text-slate-300 font-semibold">Nosotros</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -27,7 +27,7 @@ export default function NosotrosPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
                 Nosotros
               </h1>
-              <p className="text-lg font-semibold text-amber-400 mb-4">
+              <p className="text-lg font-semibold text-slate-200 mb-4">
                 Ingeniería aplicada a la protección, mantenimiento y adecuación de infraestructura.
               </p>
               <p className="text-base text-slate-200 leading-relaxed mb-8 max-w-2xl">
@@ -36,7 +36,7 @@ export default function NosotrosPage() {
               <div>
                 <Link
                   href="/servicios/sistemas-contra-incendios"
-                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-900 transition shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-lg  bg-[#D72638] transition-all hover:bg-red-700 text-white px-6 py-3.5 text-sm font-bold transition shadow-lg hover:shadow-xl"
                 >
                   <span>Conoce nuestros servicios</span>
                   <ArrowRight className="h-4 w-4" />
@@ -47,7 +47,7 @@ export default function NosotrosPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 flex items-center justify-center min-h-[280px] p-8 text-center bg-gradient-to-br from-[#103B5C] to-[#1a4a70]">
                 <div>
-                  <div className="h-16 w-16 mx-auto mb-4 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
+                  <div className="h-16 w-16 mx-auto mb-4 rounded-2xl bg-blue-600/20 text-white flex items-center justify-center border border-white/10">
                     <ShieldCheck className="h-8 w-8" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Especialización & Compromiso</h3>
@@ -110,13 +110,13 @@ export default function NosotrosPage() {
 
       {/* B03 — Protección Contra Incendios (Nuestra Especialidad - Alta Jerarquía) */}
       <section className="py-16 bg-blue-950 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-        
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            
+
             <div className="lg:w-7/12">
-              <span className="inline-block px-3 py-1 rounded-md bg-amber-500/20 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-4 border border-amber-500/30">
+              <span className="inline-block px-3 py-1 rounded-md bg-red-500/20 text-red-400 text-xs font-extrabold uppercase tracking-wider mb-4 border border-red-500/30">
                 Nuestra Especialidad
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
@@ -128,8 +128,8 @@ export default function NosotrosPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
-                    <ShieldCheck className="h-4 w-4 shrink-0" />
+                  <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-red-400" />
                     <h3>Sistemas de detección</h3>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -138,8 +138,8 @@ export default function NosotrosPage() {
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
-                    <ShieldCheck className="h-4 w-4 shrink-0" />
+                  <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-red-400" />
                     <h3>Bombas Contra Incendio</h3>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -148,8 +148,8 @@ export default function NosotrosPage() {
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
-                    <ShieldCheck className="h-4 w-4 shrink-0" />
+                  <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-red-400" />
                     <h3>Sistemas de Protección con Agua</h3>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -158,8 +158,8 @@ export default function NosotrosPage() {
                 </div>
 
                 <div className="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
-                    <ShieldCheck className="h-4 w-4 shrink-0" />
+                  <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-red-400" />
                     <h3>Mantenimiento PCI</h3>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -170,7 +170,7 @@ export default function NosotrosPage() {
 
               <Link
                 href="/servicios/sistemas-contra-incendios"
-                className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shadow-lg"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-6 py-3.5 text-sm font-bold text-white shadow-lg"
               >
                 <span>Conoce nuestras soluciones</span>
                 <ArrowRight className="h-4 w-4" />
@@ -181,19 +181,19 @@ export default function NosotrosPage() {
               <div className="rounded-2xl overflow-hidden border border-white/15 shadow-2xl p-8 bg-gradient-to-br from-blue-900 to-slate-900">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <span className="text-amber-400 font-bold">01</span>
+                    <span className="text-red-400 font-bold">01</span>
                     <span className="text-sm font-medium text-white">Sistemas de Detección</span>
                   </div>
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <span className="text-amber-400 font-bold">02</span>
+                    <span className="text-red-400 font-bold">02</span>
                     <span className="text-sm font-medium text-white">Bombas Contra Incendio</span>
                   </div>
                   <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                    <span className="text-amber-400 font-bold">03</span>
+                    <span className="text-red-400 font-bold">03</span>
                     <span className="text-sm font-medium text-white">Sistemas de Agua</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-amber-400 font-bold">04</span>
+                    <span className="text-red-400 font-bold">04</span>
                     <span className="text-sm font-medium text-white">Mantenimiento PCI</span>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export default function NosotrosPage() {
           <div>
             <Link
               href="/servicios/servicios-generales"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#103B5C] hover:text-amber-600 transition"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#103B5C] hover:text-[#D72638] transition"
             >
               <span>Conoce nuestros Servicios Generales</span>
               <ArrowRight className="h-4 w-4" />
@@ -306,8 +306,8 @@ export default function NosotrosPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="relative pl-6 border-l-2 border-amber-500 md:border-l-0 md:border-t-2 md:pt-6 md:pl-0">
-              <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest block mb-1">
+            <div className="relative pl-6 border-l-2 border-[#103B5C] md:border-l-0 md:border-t-2 md:pt-6 md:pl-0">
+              <span className="text-xs font-extrabold text-[#103B5C] uppercase tracking-widest block mb-1">
                 01
               </span>
               <h3 className="text-base font-bold text-slate-900 mb-2">Entendemos el requerimiento</h3>
@@ -363,7 +363,7 @@ export default function NosotrosPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="flex gap-4 items-start">
-              <span className="text-2xl font-black text-amber-500 shrink-0">01</span>
+              <span className="text-2xl font-black text-[#103B5C] shrink-0">01</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Claridad</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -373,7 +373,7 @@ export default function NosotrosPage() {
             </div>
 
             <div className="flex gap-4 items-start">
-              <span className="text-2xl font-black text-amber-500 shrink-0">02</span>
+              <span className="text-2xl font-black text-[#103B5C] shrink-0">02</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Seguridad</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -383,7 +383,7 @@ export default function NosotrosPage() {
             </div>
 
             <div className="flex gap-4 items-start">
-              <span className="text-2xl font-black text-amber-500 shrink-0">03</span>
+              <span className="text-2xl font-black text-[#103B5C] shrink-0">03</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Orden</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -393,7 +393,7 @@ export default function NosotrosPage() {
             </div>
 
             <div className="flex gap-4 items-start">
-              <span className="text-2xl font-black text-amber-500 shrink-0">04</span>
+              <span className="text-2xl font-black text-[#103B5C] shrink-0">04</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Responsabilidad</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -421,7 +421,7 @@ export default function NosotrosPage() {
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
               <Link
                 href="/cotiza-tu-proyecto"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shadow-md"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-6 py-3.5 text-sm font-bold text-white shadow-md"
               >
                 <span>Cotiza tu proyecto</span>
                 <ArrowRight className="h-4 w-4" />

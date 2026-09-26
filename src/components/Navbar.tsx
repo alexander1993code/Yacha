@@ -77,7 +77,7 @@ export default function Navbar() {
               <div className="absolute top-full left-0 w-96 rounded-xl bg-white p-4 shadow-xl border border-slate-100 flex flex-col gap-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 {/* 1. Servicio Principal: Protección Contra Incendios */}
                 <div className="flex flex-col gap-1.5">
-                  <div className="px-2 text-[10px] font-bold uppercase tracking-wider text-amber-600">
+                  <div className="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
                     Especialidad Principal:
                   </div>
                   <Link
@@ -93,7 +93,7 @@ export default function Navbar() {
                         {mainPciService.subtitle}
                       </span>
                     </div>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-amber-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="h-4 w-4 shrink-0 text-[#D72638] group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </Link>
 
                   {/* Submenús PCI */}
@@ -105,7 +105,7 @@ export default function Navbar() {
                         onClick={() => setIsServicesOpen(false)}
                         className="flex items-center gap-2 rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-[#103B5C] transition"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#D72638] shrink-0" />
                         <span>{service.label}</span>
                       </Link>
                     ))}
@@ -159,7 +159,7 @@ export default function Navbar() {
 
           <Link
             href="/cotiza-tu-proyecto"
-            className="rounded-lg bg-amber-500 hover:bg-amber-600 px-5 py-2.5 text-sm font-semibold text-slate-900 transition shadow-xs hover:shadow"
+            className="rounded-lg bg-[#D72638] transition-all hover:bg-red-700  px-5 py-2.5 text-sm font-semibold text-white "
           >
             Cotiza tu proyecto
           </Link>
@@ -204,7 +204,7 @@ export default function Navbar() {
             {/* Submenú de Servicios en Mobile */}
             <div className="flex flex-col gap-3 pl-3 border-l-2 border-[#103B5C]/30 my-1">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Servicios</span>
-              
+
               {/* PCI */}
               <div className="flex flex-col gap-1.5">
                 <Link
@@ -213,7 +213,7 @@ export default function Navbar() {
                   className="text-sm font-bold text-[#103B5C] hover:underline flex items-center justify-between"
                 >
                   <span>{mainPciService.label}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-amber-100 text-amber-900 uppercase font-semibold">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-red-50 text-red-700 uppercase font-semibold">
                     Especialidad
                   </span>
                 </Link>
@@ -267,7 +267,7 @@ export default function Navbar() {
             <Link
               href="/cotiza-tu-proyecto"
               onClick={() => setIsOpen(false)}
-              className="rounded-lg bg-amber-500 px-5 py-3 text-center text-sm font-semibold text-slate-900 shadow-xs"
+              className="rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-5 py-3 text-center text-sm font-semibold text-white shadow-xs"
             >
               Cotiza tu proyecto
             </Link>

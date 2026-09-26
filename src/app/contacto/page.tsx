@@ -95,21 +95,21 @@ export default function ContactoPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
-      
+
       {/* Bloque 01 — Hero Compacto */}
       <section className="bg-gradient-to-b from-[#103B5C] to-[#0A273E] text-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-xs font-medium text-slate-300 mb-6">
-            <Link href="/" className="hover:text-amber-400 transition">Inicio</Link>
+            <Link href="/" className="hover:text-white transition">Inicio</Link>
             <ChevronRight className="h-3 w-3 text-slate-400" />
-            <span className="text-amber-400 font-semibold">Contacto</span>
+            <span className="text-slate-300 font-semibold">Contacto</span>
           </nav>
 
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
               Contacto
             </h1>
-            <p className="text-base font-semibold text-amber-400 mb-3">
+            <p className="text-base font-semibold text-slate-200 mb-3">
               Estamos disponibles para atender tus consultas y conocer las necesidades de tu proyecto.
             </p>
             <p className="text-sm text-slate-300 leading-relaxed">
@@ -175,9 +175,9 @@ export default function ContactoPage() {
             </div>
 
             {/* Correo electrónico */}
-            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-amber-300 transition">
+            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-slate-300 transition">
               <div>
-                <div className="h-10 w-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-4">
+                <div className="h-10 w-10 rounded-xl bg-blue-100 text-[#103B5C] flex items-center justify-center mb-4">
                   <Mail className="h-5 w-5" />
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Correo electrónico</h3>
@@ -188,7 +188,7 @@ export default function ContactoPage() {
               </div>
               <a
                 href={`mailto:${contactConfig.contactEmail}?subject=Consulta%20desde%20la%20web%20de%20YACHA`}
-                className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 hover:underline transition"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#103B5C] hover:underline transition"
               >
                 <span>Escríbenos por correo →</span>
               </a>
@@ -209,8 +209,8 @@ export default function ContactoPage() {
             </p>
 
             {validationError && (
-              <div className="bg-amber-50 border border-amber-200 text-amber-800 p-3 rounded-xl mb-6 text-xs flex items-center gap-2">
-                <AlertCircle className="h-4 w-4 text-amber-600 shrink-0" />
+              <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-xl mb-6 text-xs flex items-center gap-2">
+                <AlertCircle className="h-4 w-4 text-red-500 shrink-0" />
                 <span>{validationError}</span>
               </div>
             )}
@@ -310,7 +310,6 @@ export default function ContactoPage() {
                     className="w-full text-xs p-3 rounded-lg border border-slate-300 focus:border-[#103B5C] focus:ring-1 focus:ring-[#103B5C]"
                   />
                 </div>
-
                 <div>
                   <label className="flex items-start gap-2 cursor-pointer text-xs text-slate-600">
                     <input
@@ -319,9 +318,19 @@ export default function ContactoPage() {
                       onChange={(e) => setPrivacyConsent(e.target.checked)}
                       className="h-4 w-4 mt-0.5 rounded border-slate-300 text-[#103B5C] focus:ring-[#103B5C]"
                     />
-                    <span>
-                      Acepto la Política de Privacidad de YACHA para la atención de mi consulta. *
-                    </span>
+
+                    {/* Agrupamos los textos en un div para que sigan el flujo vertical */}
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs">
+                        Acepto la Política de Privacidad de YACHA para la atención de mi consulta. *
+                      </span>
+
+                      {privacyConsent && (
+                        <p className="text-xs text-slate-500 italic">
+                          Tu información no se guardará en ninguna base de datos.
+                        </p>
+                      )}
+                    </div>
                   </label>
                 </div>
 
@@ -355,7 +364,7 @@ export default function ContactoPage() {
 
             <Link
               href="/cotiza-tu-proyecto"
-              className="inline-flex items-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-600 px-6 py-3.5 text-sm font-bold text-slate-950 transition shrink-0 shadow-md"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#D72638] transition-all hover:bg-red-700 px-6 py-3.5 text-sm font-bold text-white shrink-0 shadow-md"
             >
               <span>Cotiza tu proyecto</span>
               <ArrowRight className="h-4 w-4" />
@@ -371,7 +380,7 @@ export default function ContactoPage() {
             <h2 className="text-xl font-extrabold text-[#103B5C] mb-4">
               Información de atención
             </h2>
-            
+
             <div className="space-y-4 text-xs text-slate-700">
               <div>
                 <span className="font-bold text-slate-900 block mb-0.5">Cobertura</span>

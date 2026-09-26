@@ -13,21 +13,21 @@ import { contactConfig } from "@/config/contact";
 
 const stats = [
   {
-    value: "Ingeniería",
+    value: "Especialidad",
     label: "Protección Contra Incendios",
     description: "Especialidad principal",
     icon: ShieldCheck,
   },
   {
     value: "Cobertura",
-    label: "Lima y Regiones",
+    label: "Lima y otras Regiones del Perú",
     description: "Atención a nivel nacional",
     icon: FileText,
   },
   {
     value: "WhatsApp",
     label: contactConfig.phoneDisplay,
-    description: "Atención inmediata",
+    description: "Canal de contacto directo",
     icon: MessageCircle,
     href: contactConfig.getWhatsappUrl(),
   },
@@ -50,13 +50,14 @@ export default function Footer() {
 
             const content = (
               <div className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-400">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600/20 text-white">
                   <Icon size={24} strokeWidth={2} />
                 </div>
 
                 <div>
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center">
+                      <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-500 mr-2 shrink-0" />
                       {stat.value}
                     </span>
                     <span className="text-sm font-bold text-white mt-0.5">
@@ -91,11 +92,11 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} YACHA. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <Link href="/nosotros" className="hover:text-amber-400 transition">Nosotros</Link>
-            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-amber-400 transition">Protección Contra Incendios</Link>
-            <Link href="/servicios/servicios-generales" className="hover:text-amber-400 transition">Servicios Generales</Link>
-            <Link href="/contacto" className="hover:text-amber-400 transition">Contacto</Link>
-            <Link href="/cotiza-tu-proyecto" className="hover:text-amber-400 transition font-medium text-amber-400">Cotiza tu proyecto</Link>
+            <Link href="/nosotros" className="hover:text-red-400 transition">Nosotros</Link>
+            <Link href="/servicios/sistemas-contra-incendios" className="hover:text-red-400 transition">Protección Contra Incendios</Link>
+            <Link href="/servicios/servicios-generales" className="hover:text-red-400 transition">Servicios Generales</Link>
+            <Link href="/contacto" className="hover:text-red-400 transition">Contacto</Link>
+            <Link href="/cotiza-tu-proyecto" className="hover:text-red-400 transition font-medium">Cotiza tu proyecto</Link>
           </div>
         </div>
       </div>

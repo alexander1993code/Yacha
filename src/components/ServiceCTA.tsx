@@ -43,7 +43,7 @@ export default function ServiceCTA({
     <section className="w-full bg-slate-50 py-12 lg:py-16 border-t border-slate-200">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
-          
+
           {/* Texto y Acciones */}
           <div className="w-full lg:w-3/5">
             <span className="text-xs font-bold uppercase tracking-wider text-[#D72638]">
